@@ -1,0 +1,278 @@
+@charset 'utf-8';
+
+.header .inner {
+    position: relative;
+    max-width: 1840px;
+    /* padding: 0 40px 0; */
+}
+
+.header .logo {
+    position: absolute;
+    left: 60px;
+}
+
+.header .logo a {
+    display: block;
+}
+
+.header .logo a img {
+    width: 100%;
+}
+
+.header-menu {
+    position: relative;
+}
+
+.header-menu .header-menu__button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 60px;
+    width: 30px;
+    transition: .25s ease-in-out;
+}
+
+.header-menu .header-menu__button .header-menu__hamburger {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    transition: .25s ease-in-out;
+}
+
+.header-menu .header-menu__button .header-menu__hamburger + .header-menu__hamburger {
+    margin-top: 8px;
+}
+
+.header-menu .header-menu__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.header-menu__background__contents {
+    position: relative;
+}
+
+/* 메인 메뉴 */
+.header .gnb {
+    position: absolute;
+    /* top: 0; */
+    top: -370px; /* position: absolute; 로 효과준거라 계속 메뉴가 화면에 남아서 어쩔 수 없이 픽셀로 하드코딩으로 이동시킴. 추후 수치 안넣도록 수정 */
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.header .gnb a {
+    color: #fff;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.header .gnb .gnb-menu {
+    display: flex;
+    margin: 0 auto; 
+    /* max-width: 1500px; */
+    justify-content: center;
+}
+
+.header .gnb .gnb-item {
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.header .gnb .gnb-item.on {
+    opacity: 1;
+}
+
+.header .gnb .gnb-menu .gnb-item {
+    margin: 0 23px;
+    flex-shrink: 0;
+    flex-basis: 160px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.header .gnb .gnb-menu .gnb-item > a {
+    font-size: 54px;
+    transition: all 0.25s;
+    font-weight: 400;
+}
+
+.header .gnb .gnb__submenu li {
+    margin: 10px 0;
+}
+
+.header .gnb .gnb__submenu a {
+    font-size: 20px;
+    transition: all 0.25s;
+    font-weight: 400;
+}
+
+/* 탑 버튼 */
+.top-button {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
+}
+
+/* 양쪽 사이드 메뉴 */
+.sidemenu {
+    position: fixed;
+    z-index: 11;
+    transform: rotate(90deg);
+    top: 50%;
+    transition: all 0.3s;
+}
+
+.sidemenu:nth-of-type(1) {
+    left: -45px;
+}
+
+.sidemenu:nth-of-type(2) {
+    right: -13px;
+}
+
+.sidemenu .sidemenu-list {
+    display: table;
+    table-layout: fixed;
+}
+
+.sidemenu .sidemenu-list .sidemenu-item {
+    display: table-cell;
+}
+
+.sidemenu .sidemenu__link {
+    margin: 0 10px;
+    color: #fff;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+/* 메뉴 버튼 눌렀을 때 */
+.header-menu.on .gnb {
+    top: 50%;
+    /* left: 10%; */
+    /* right: 10%; */
+    transform: translateY(-50%);
+}
+
+.header-menu.on .header-menu__button {
+    width: 50px;
+    right: 50%;
+    margin-right: -25px;
+    z-index: 11;
+}
+
+.header-menu.on .header-menu__button .header-menu__hamburger:nth-of-type(1) {
+    transform: rotate(135deg);
+}
+
+.header-menu.on .header-menu__button .header-menu__hamburger:nth-of-type(2) {
+    display: none;
+}
+
+.header-menu.on .header-menu__button .header-menu__hamburger:nth-of-type(3) {
+    margin-top: -3px;
+    transform: rotate(-135deg);
+}
+
+.header-menu.on .header-menu__background {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+@media screen and (max-width:1680px){
+    .header-menu.on .header-menu__button {
+        margin-top: 20px;
+    }
+
+    .header .gnb .gnb-menu .gnb-item > a {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width:1280px){
+    .header-menu.on .header-menu__button {
+        margin-top: 40px;
+    }
+    
+    .header .gnb .gnb-menu .gnb-item {
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width:1200px){
+
+}
+
+@media screen and (max-width:1024px){
+    .header {
+        top: 20px;
+    }
+
+    .header .logo {
+        width: 150px;
+        left: 20px;
+    }
+
+    .header-menu .header-menu__button {
+        right: 20px;
+    }
+
+    .header .gnb .gnb-menu {
+        padding-top: 100px;
+    }
+
+    .header .gnb .gnb-menu .gnb-item {
+        margin: 0 3%;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        flex-basis: 120px;
+    }
+
+    .header .gnb .gnb-menu .gnb-item > a {
+        font-size: 25px;
+    }
+
+    .sidemenu-box {
+        display: none;
+    }
+}
+
+@media screen and (max-width:800px){
+
+}
+
+@media screen and (max-width:684px){
+    .header .logo {
+        width: 100px;
+    }
+
+    .header .gnb .gnb-menu {
+        display: block;
+    }
+
+    .header .gnb .gnb-menu .gnb-item {
+        margin: 0;
+        line-height: 1.7;
+    }
+
+    .header .gnb .gnb__submenu {
+        display: none;
+    }
+}

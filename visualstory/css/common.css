@@ -1,0 +1,243 @@
+@charset 'utf-8';
+
+@import url('http://fonts.googleapis.com/earlyaccess/notosanskr.css');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+/* nanum-myeongjo-regular - latin_korean */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-regular.eot'); /* IE9 Compat Modes */
+  src: local('NanumMyeongjo'),
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-regular.woff') format('woff'), /* Modern Browsers */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-regular.svg#NanumMyeongjo') format('svg'); /* Legacy iOS */
+}
+/* nanum-myeongjo-700 - latin_korean */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-700.eot'); /* IE9 Compat Modes */
+  src: local('NanumMyeongjo Bold'), local('NanumMyeongjoBold'),
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-700.woff') format('woff'), /* Modern Browsers */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-700.svg#NanumMyeongjo') format('svg'); /* Legacy iOS */
+}
+/* nanum-myeongjo-800 - latin_korean */
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  font-style: normal;
+  font-weight: 800;
+  src: url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-800.eot'); /* IE9 Compat Modes */
+  src: local('NanumMyeongjo ExtraBold'), local('NanumMyeongjoExtraBold'),
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-800.woff') format('woff'), /* Modern Browsers */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('http://www.visualstory.co.kr/font/nanum-myeongjo-v8-latin_korean-800.svg#NanumMyeongjo') format('svg'); /* Legacy iOS */
+}
+
+/* 웹 접근성 IR */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
+    clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+    white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+/* 태그 스타일 재정의 */
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-sizing: unset;
+    cursor: pointer;
+}
+
+/* 레이아웃 정의 */
+body {
+    font-family:'Noto Sans KR', sans-serif;
+    font-style: normal;
+}
+
+.wrap {
+    position: relative;
+    background-color: #e5004f;
+    overflow: hidden; /* 배경 이미지 컨텐츠 밖으로 못나가게 */
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    z-index: 20;
+}
+
+.contents {
+    position: relative;
+    z-index: 10;
+}
+
+.footer {
+    position: relative;
+    padding: 50px;
+    background: #e5004f;
+    color: #fff;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.inner {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 애니메이션 정의 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50%);
+        -webkit-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        -o-transform: translateY(50%);
+}
+	to {
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+    }
+}
+
+/* 애니메이션 클래스 정의 */
+.ani-fade-in {
+    animation-name: fadeInUp;
+    animation-duration: .5s;
+    animation-delay: .1s;
+    animation-fill-mode: both;
+}
+
+/* 움직이는 배경 이미지 */
+.moving-background {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    z-index: 1;
+    transition: all 3s;
+}
+
+.moving-background img {
+    width: 1222px;
+}
+
+.moving-background + .moving-background {
+    left: auto;
+    right: -18%;
+    top: -7%;
+    transition: all 1.5s;
+}
+
+.moving-background + .moving-background img {
+    width: 85%;
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width:1680px){
+    /* 배경 움직이는 이미지 */
+    .moving-background {
+        left: 10%;
+        top: 0;
+    }
+
+    .moving-background + .moving-background {
+        right: -15%;
+        top: -150px;
+    }
+
+    .footer-info__text--linebreak:before {
+        content: '\a';
+        white-space: pre;
+    }
+}
+
+@media screen and (max-width:1280px){
+    .moving-background img {
+        width: 1018.5px;
+    }
+
+    .moving-background + .moving-background {
+        right: -15%;
+        top: -75px;
+    }
+
+    .moving-background + .moving-background img {
+        width: 423px;
+    }
+}
+
+@media screen and (max-width:1200px){
+
+}
+
+@media screen and (max-width:1024px){
+    .moving-background {
+        left: 10%;
+        top: -50px;
+    }
+
+    .moving-background img {
+        width: 679px;
+    }
+
+    .moving-background + .moving-background {
+        right: -10%;
+        top: -25px;
+    }
+    
+    .moving-background + .moving-background img {
+        width: 282px;
+    }
+}
+
+@media screen and (max-width:800px){
+
+}
+
+@media screen and (max-width:684px){
+    .moving-background {
+        left: 0;
+        top: -10px;
+    }
+
+    .moving-background img {
+        width: 339.5px;
+    }
+
+    .moving-background + .moving-background {
+        right: -5%;
+        top: -10px;
+    }
+
+    .moving-background + .moving-background img {
+        width: 141px;
+    }
+}
