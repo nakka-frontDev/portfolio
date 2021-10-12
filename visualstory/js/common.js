@@ -69,4 +69,11 @@ $(document).ready(function() {
             'top' : movingImg2_pos + 'px'
         });  
     });
+
+    /* 페이지 제일 위로 가는 동작 */
+    $('.top-button').on('click', function() {
+        $('html, body').animate({
+            scrollTop : 0
+        }, 400);
+    })
 });
