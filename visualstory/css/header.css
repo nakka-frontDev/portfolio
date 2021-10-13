@@ -92,8 +92,9 @@
 
 .header .gnb .gnb-menu .gnb-item {
     margin: 0 23px;
+    padding: 0 40px;
     flex-shrink: 0;
-    flex-basis: 160px;
+    flex-basis: 280px;
     text-align: center;
     line-height: 1.4;
 }
@@ -197,6 +198,11 @@
     /* .header-menu.on .header-menu__button {
         margin-top: 20px;
     } */
+
+    .header .gnb .gnb-menu .gnb-item {
+        flex-basis: 160px;
+        padding: 0;
+    }
 
     .header .gnb .gnb-menu .gnb-item > a {
         font-size: 35px;

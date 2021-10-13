@@ -11,12 +11,12 @@ $(document).ready(function() {
     });
 
     /* 메인 메뉴 마우스 올렸을 때 효과 */
-    $('.header .gnb .gnb-item').addClass('on'); // 참고 사이트에서 메뉴 띄워지면 처음에는 무조관 효과 활성화되게 되어있어서 동일하게 함
+    $('.gnb-item').addClass('on'); // 참고 사이트에서 메뉴 띄워지면 처음에는 무조관 효과 활성화되게 되어있어서 동일하게 함
     $('.gnb-item').hover(function() { // 마우스 enter/leave라 hover가 직관적이라고 판단
         $('.gnb-item').removeClass('on');
         $(this).addClass('on');
     }, function() {
-        $('.gnb-item').removeClass('on');
+        $('.gnb-item').addClass('on'); // 참고 사이트에서 메뉴 띄워지면 처음에는 무조관 효과 활성화되게 되어있어서 동일하게 함
     });
 
     /* 배경 요소 스크롤시 움직임 재작업 */
