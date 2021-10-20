@@ -1,0 +1,632 @@
+@charset 'utf-8';
+
+/* 상단 헤더 */
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #000000;
+    z-index: 10;
+}
+
+.header__inner {
+    display: flex;
+    padding: 0 7rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    /* display: table-cell; */
+    /* width: 30%; */
+}
+
+.header__menu {
+
+}
+.gnb {
+    display: table;
+}
+
+.gnb__item {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.gnb__item a {  
+    display: block;
+    /* height: 3.9rem; */
+    padding: 1.3rem 1.5rem;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: Spartan;
+    letter-spacing: 0.195rem;
+    line-height: 1;
+}
+
+/* 인트로 부분 */
+.intro {
+    position: relative;
+}
+
+/* 태블릿 이하 사이즈에서는 동영상 비율은 맞추되 사이즈를 줄이는 방향이 맞을 듯, 아님 원래 홈페이지처럼 사진을 아에 넣어버리거나 (동영상 초점이 안맞음)*/
+.intro__area-movie {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.intro__area-movie video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro__backgound {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+}
+
+@media screen and (max-aspect-ratio: 1219/685) {
+    .intro__area-movie video {
+        width: auto;
+        height: 100vh;
+     }
+ }
+ 
+.intro__area-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110rem;
+    line-height: 1.7;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.intro__text {
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+.intro__text em {
+    font-size: 6.6rem;
+    font-weight: bold;
+    font-family: 'Questrial';
+}
+
+.intro__area-button {
+    text-align: center;
+}
+
+.intro-button {
+    display: inline-block;
+    font-family: 'Spartan';
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* 본문 - dowhat 플랫폼 소개 */
+.strength--1 {
+    text-align: center;
+}
+
+.strength__text {
+    /* text-align: center; */
+}
+
+.strength__img {
+    margin-top: 10rem;
+}
+
+.strength:nth-of-type(even) {
+    background-color: #f5f5f5;
+}
+
+.media__more-button {
+    display: inline-block;
+    margin-top: 6rem;
+    padding: 1rem 1.8rem;
+    border-color: #888;
+    border-radius: none;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    -ms-border-radius: none;
+    -o-border-radius: none;
+    font-family: 'Roboto';
+    font-size: 1.4rem;
+    color: rgb(49, 49, 49);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.media__more-button:hover {
+    background-color: #888;
+    color: #fff;
+}
+
+/* 본문 - UNTACT 경험 모바일 서비스 */
+.section-contents-mobile {
+    background-color: #000;
+    color: #fff;
+}
+
+.section-contents-mobile__sub-title {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.section-contents-mobile__img-box {
+    padding-bottom: 14.6rem;
+    text-align: center;
+}
+
+.sub-section__title {
+    position: relative;
+    font-family: 'Spartan';
+    font-size: 1.6rem;
+    text-align: center;
+    padding-bottom: 12rem;
+}
+
+.sub-section__title strong {
+    font-weight: 700;
+    font-size: 2.6rem;
+}
+
+.sub-section__title:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    width: 35px;
+    height: 1px;
+    background-color: #fff;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.sub-section__title:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    width: 35px;
+    height: 1px;
+    background-color: #fff;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.sub-section__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sub-section__item {
+    flex: 0 0 32%;
+    margin-top: 8rem;
+    text-align: center;
+}
+
+.sub-section__item figure img {
+    width: 300px;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+.sub-section__item figure img:hover {
+    transform: scale(105%);
+    -webkit-transform: scale(105%);
+    -moz-transform: scale(105%);
+    -ms-transform: scale(105%);
+    -o-transform: scale(105%);
+}
+
+.sub-section__item .sub-section__quote {
+    display: inline-block;
+    margin-top: 3rem;
+    font-size: 1.4rem;
+}
+
+.sub-section__item strong {
+    display: inline-block;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+.section-contents-partner {
+    background-color: #000;
+    color: #fff;
+}
+
+.section-contents-partner .sub-section__title {
+    padding-bottom: 7.4rem;
+    text-align: center;
+}
+
+.section-contents-partner .sub-section__title:before {
+    display: none;
+}
+
+.section-contents-partner .sub-section__title:after {
+    display: none;
+}
+
+.section-contents-partner .sub-section__title .title-text {
+    position: relative;
+}
+
+.section-contents-partner .sub-section__title .title-text:before {
+    position: absolute;
+    content: '';
+    left: -2.4rem;
+    top: 0.7rem;
+    width: 4px;
+    height: 2px;
+    background-color: #5e5e5e;    
+}
+
+.section-contents-partner .sub-section__title .title-text:after {
+    position: absolute;
+    content: '';
+    right: -2.4rem;
+    top: 0.7rem;
+    width: 4px;
+    height: 2px;
+    background-color: #5e5e5e;    
+}
+
+.partner__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.partner__item {
+    flex: 0 0 19rem;
+    text-align: center;
+}
+
+.partner__logo-img {
+    width: 90%;
+}
+
+.partner__desc {
+    line-height: 2.4;
+}
+
+.partner__name {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.partner__info {
+    font-size: 1.3rem;
+}
+
+/* 이용후기 */
+.section-contents-review .section-row__title {
+    padding-bottom: 5rem;
+}
+
+.slider-review {
+    position: relative;
+}
+
+.slider-review__box {
+    overflow: hidden;
+}
+
+.slider-review__list {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.slider-review__item {
+    margin: 0 0.75rem;
+    flex: 0 0 27rem;
+}
+
+.section-contents-slider-review__img-box {
+    position: relative;
+    display: table;
+}
+
+.section-contents-slider-review__img-box img {
+    display: table-cell;
+    width: 100%;
+}
+
+.slider-review__desc {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-clip: content-box;
+    background-color: #fff;
+    height: 100%;
+    display: table;
+    box-sizing: border-box;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    opacity: 0;
+}
+
+.slider-review-desc__inner {
+    display: table-cell;
+    padding: 0 3rem;
+    vertical-align: middle;
+}
+
+.slider-review-desc__title {
+    display: inline-block;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.slider-review-desc__info {
+    font-size: 1.3rem;
+}
+
+.button-slider-arrow {
+    position: absolute;
+    top: 50%;
+    padding: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.16);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    transform: translateY(-50%);
+}
+
+.button-slider-arrow--left {
+    left: -7rem;
+}
+
+.button-slider-arrow--right {
+    right: -7rem;
+}
+
+/* 이용후기 큰 슬라이더 */
+.slider-review--big {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.slider-review--big .slider-review__list {
+    position: relative;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.slider-review--big .slider-review__item {
+    position: absolute;
+    left: 0;
+    z-index: 11;
+    flex: none;
+    margin: 0;
+}
+
+.slider-review__title {
+    position: relative;
+    top: 1.5rem;
+    left: 3rem;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.slider-review--big .slider-review__img-wrapper img {
+    width: auto;
+}
+
+.slider-review--big .button-slider-close {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+    fill: #d1d1d1;
+}
+
+.slider-review--big .button-slider-arrow--left {
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.slider-review--big .button-slider-arrow--right {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.view {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.ani_fade_in {
+    animation: fadeIn .5s ease-in-out;
+    -webkit-animation: fadeIn .5s ease-in-out;
+}
+
+
+/* 고정 배경 */
+.fixed-background {
+    height: 54.5rem;
+    background-image: url("../image/bg_fixed.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contact-us {
+    padding: 10rem 0;
+    text-align: center;
+    background-color: #000;
+}
+
+.contact__link {
+    display: block;
+}
+
+.contact-us__link:hover img {
+    transform: scale(105%);
+    -webkit-transform: scale(105%);
+    -moz-transform: scale(105%);
+    -ms-transform: scale(105%);
+    -o-transform: scale(105%);
+}
+
+.contact-us__img {
+    width: 200px;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+.footer {
+    padding: 10rem 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Quicksand, "Nanum Gothic", Tahoma, Dotum, Verdana, Arial, "Trebuchet MS";
+    letter-spacing: 0.065rem;
+    line-height: 2rem;
+}
+
+.footer .inner {
+    display: table;
+}
+
+.footer__col {
+    display: table-cell;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.footer__col + .footer__col {
+    text-align: right;
+}
+
+.footer__info em {
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.footer__info address {
+    margin-top: 1.4rem;
+    font-family: 'Spartan';
+}
+
+.footer__copyright {
+    position: relative;
+    top: -2rem;
+    color: #979797;
+}
+
+/* 위로가기 */
+.goto-top {
+    z-index: 9;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 34px;
+    height: 34px;
+    background: rgba(0,0,0,0.1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #aaa;
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
