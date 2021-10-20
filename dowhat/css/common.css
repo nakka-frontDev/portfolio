@@ -1,0 +1,211 @@
+@charset 'utf-8';
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+    src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+         url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
+
+/* 웹 접근성 IR */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
+    clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
+    white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+/* 태그 스타일 재정의 */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Noto Sans','Open sans','Nanum Gothic', 'Tahoma', 'Verdana', 'Arial', 'Trebuchet MS',sans-serif;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-sizing: unset;
+    cursor: pointer;
+}
+
+/* 레이아웃 정의 */
+.inner {
+    position: relative;
+    width: 114rem;
+    margin: 0 auto;
+}
+
+/* 공통 사용 요소 */
+.button--ghost {
+    padding: 1.5rem 4rem;
+    margin-top: 4rem;
+    border-radius: 3px;
+    border: 1px #737371 solid;
+    color: #d4d4d4;
+    font-family: 'Playfair Display', 'Nanum Gothic';
+}
+
+.section-row {
+    padding: 10.8rem 0;
+    line-height: 1.5;
+}
+
+.section-row__title {
+    margin-bottom: 3rem;
+    font-size: 4.6rem;
+    font-weight: 700;
+    text-align: center;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.section-row__text {
+    font-size: 1.8rem;
+}
+
+.media__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.media__img-box {
+    width: 555px;
+    flex: 1 1 555px;
+}
+
+.media__img {
+    width: 85%;
+}
+
+.media__text {
+    flex: 1 1 585px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.media__content--reverse .media__img-box {
+    order: 2;
+    text-align: right;
+    flex: 1 1 585px;
+}
+
+.media__content--reverse .media__text {
+    width: 555px;
+    flex: 1 1 555px;
+}
+
+.media__title {
+    font-size: 5.4rem;
+    font-family: 'Roboto';
+    font-weight: 700;
+}
+
+.media__sub-title {
+    margin: 15px auto 20px;
+    font-size: 2.4rem;
+    color: #6a6a6a;
+    font-family: 'Questrial';
+    line-height: 2.8;
+}
+
+.media__desc {
+    color: #919191;
+    font-size: 1.8rem;
+    font-family: 'Roboto';
+}
+
+/* 애니메이션 요소 */
+.ani-element-on {
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(300%);
+        -webkit-transform: translateY(300%);
+        -moz-transform: translateY(300%);
+        -ms-transform: translateY(300%);
+        -o-transform: translateY(300%);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+}
+    100% {
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+    }
+}
+
+@keyframes moveRightToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+}
+    100% {
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+    }
+}
