@@ -37,13 +37,23 @@
                 </div>
                 <div class="header__menu">
                     <div class="header__gnb">
+                        <div class="hamburger">
+                            <button type="button" class="hamburder-button" aria-label="메뉴 보기 버튼">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
                         <nav class="gnb">
                             <ul class="gnb__menu">
                                 <li class="gnb__item"><a href="#">SERVICE</a></li>
                                 <li class="gnb__item"><a href="#">BUSINESS</a></li>
-                                <li class="gnb__item"><a href="#">CONTACT US | 070 8672 8083</a></li>
+                                <li class="gnb__item"><a href="#">CONTACT US<span class="gnb__tel-num"> | 070 8672 8083</span></a></li>
                             </ul>
                         </nav>
+                        <button type="button" class="gnb-close-button" aria-label="메뉴 닫기 버튼">
+                            <img src="//storage.googleapis.com/i.addblock.net/fa-close-modal-white.png" alt="">
+                        </button>
                     </div>
                 </div>
             </div>
@@ -78,7 +88,7 @@
                             <div class="section-row__text strength__text ani-element ani_fadeUp">
                                 <p>
                                     DOWHAT은 다국어 지원을 기반으로 호텔의 서비스 품질 향상과 더불어 효율적인 업무를 돕는 스마트 호텔 토탈 플랫폼입니다.<br>
-                                    호텔 운영자들이 보다 쉽게 DATA 관리부터, 직원, 업무 관리, 시설 관리까지 신속하고 정확하게 체크할 수 있으며<br>
+                                    호텔 운영자들이 보다 쉽게 DATA 관리부터, 직원, 업무 관리, 시설 관리까지 신속하고 정확하게 체크할 수 있으며 <span class="line-break"></span>
                                     관리, 운영 효율을 위한 업무 환경 개선 기능을 탑재하고 있습니다.
                                 </p>
                             </div>
@@ -492,7 +502,7 @@
                 </div>
             </div>
         </footer>
-        <div id="goto-top" class="goto-top" style="visibility: visible; display: block;"><i class="fa fa-angle-up"></i></div>
+        <div id="goto-top" class="goto-top"><i class="fa fa-angle-up"></i></div>
     </div>
     <script src="./js/index.js"></script>
 </body>

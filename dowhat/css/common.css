@@ -209,3 +209,9 @@ button {
         -o-transform: none;
     }
 }
+
+/* 핼퍼 클래스 */
+.line-break:before {
+    content: '\a';
+    white-space: pre;
+}

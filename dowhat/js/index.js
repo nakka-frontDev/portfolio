@@ -1,9 +1,32 @@
 $(document).ready(function() {
+    var windowWidth = 0;
+    var windowHeight = 0;
+    var headerHeight = 0;
+
     $(window).on('load', function() {
-        var windowWidth = window.innerWidth;
-        var windowHeight = window.innerHeight;
-        var headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2)));
-        console.log($('.header').height() + '/ ' + (2 * ($('.header').css('padding-top').slice(0, 2))));
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+        headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2)));
+
+        var moviePaddingTop = ((windowHeight - headerHeight + 10) / windowWidth) * 100;
+
+        $('.intro').css({
+            paddingTop : headerHeight + 'px'
+        });
+
+        $('.intro__area-movie').css({
+            paddingTop : moviePaddingTop + '%'
+        });
+    });
+
+    var nowDevice = 'PC';
+    var reviewSlider = $('.slider-review .slider-review__list');
+
+    /* 창 크기 변화시 동영상 크기 조절 */
+    $(window).resize(function() {
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+        headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2)));
 
         var moviePaddingTop = ((windowHeight - headerHeight + 10) / windowWidth) * 100;
 
@@ -15,15 +38,32 @@ $(document).ready(function() {
             paddingTop : moviePaddingTop + '%'
         });
 
-    });
+        if (windowWidth <= 630) {
+            nowDevice = 'MOBILE';
+            reSizeSlider('MOBILE');
+        } else if (windowWidth <= 1024) {
+            nowDevice = 'TABLET';
+            reSizeSlider('TABLET');
+        } else if (windowWidth <= 1180) {
+            nowDevice = 'LAPTOP';
+            reSizeSlider('LAPTOP');
+        } else {
+            nowDevice = 'PC';
+            reSizeSlider('PC');
+        }
+
+        reviewSlider.css({
+            transform: 'translate(' + 0 + '%, 0)',
+        });
+    }).resize();
 
     /* 이용후기 슬라이더 */
-    var reviewSlider = $('.slider-review .slider-review__list');
     var sliderBtn = $('.slider-review .button-slider-arrow');
     var reviewSlide = $('.slider-review .slider-review__item'); // 큰 이용후기 슬라이드에서 쓰임
     var currentCount = 0;
     var nextCount = 0;
     var slideLength = Math.ceil($('.slider-review .slider-review__item').length / 4);
+    var slideMovePercent = 0;
 
     sliderBtn.click(function() {
         if ($(this).hasClass('button-slider-arrow--left')) {
@@ -46,22 +86,69 @@ $(document).ready(function() {
             if (nextCount < 0) {
                 nextCount = slideLength;
             }
+            getSlideMovePercent(nextCount);
             currentSlider.css({
-                transform: 'translate(-' + (25 * nextCount) + '%, 0)',
+                transform: 'translate(-' + slideMovePercent + '%, 0)',
             });
         } else if (direction === 'right') {
             nextCount = currentIndex + 1;
             if (nextCount > slideLength) {
                 nextCount = 0;
             }
+            getSlideMovePercent(nextCount);
             currentSlider.css({
-                transform: 'translate(-' + (25 * nextCount) + '%, 0)',
+                transform: 'translate(-' + slideMovePercent + '%, 0)',
             });
         } else {
             alert('잘못된 동작입니다');
             return;
         }
         currentCount = nextCount;
+    }
+
+    function reSizeSlider(device) {
+        switch (device) {
+            case 'LAPTOP':
+                $('.slider-review__box').css({
+                    width: '85.5rem',
+                    margin: '0 auto'
+                });
+                slideLength = Math.ceil($('.slider-review .slider-review__item').length / 3);
+                break;
+            case 'TABLET':
+                $('.slider-review__box').css({
+                    width: '57rem',
+                    margin: '0 auto'
+                });
+                slideLength = Math.ceil($('.slider-review .slider-review__item').length / 2);
+                break;
+            case 'MOBILE': // 가로가 630px 보다 작을때
+                $('.slider-review__box').css({
+                    width: '28.5rem',
+                    margin: '0 auto'
+                });
+                slideLength = Math.ceil($('.slider-review .slider-review__item').length);
+                break;
+            default: // 기본은 PC 일 떄
+                $('.slider-review__box').css({
+                    width: '',
+                    margin: ''
+                });
+                slideLength = Math.ceil($('.slider-review .slider-review__item').length / 4);
+                break;
+        }
+    }
+
+    function getSlideMovePercent(count) {
+        if (nowDevice === 'PC') {
+            slideMovePercent = 25 * count;
+        } else if (nowDevice === 'LAPTOP') {
+            slideMovePercent = 33.333 * count;
+        } else if (nowDevice === 'TABLET') {
+            slideMovePercent = 50 * count;
+        } else if (nowDevice === 'MOBILE') {
+            slideMovePercent = 100 * count;
+        }
     }
 
     /* 이용후기 큰 슬라이더 */
@@ -124,7 +211,7 @@ $(document).ready(function() {
     }
 
 
-    // 슬라이드 클릭시 큰 슬라이더 화면에 띄움
+    /* 이용후기 슬라이드 클릭시 큰 슬라이더 화면에 띄움 */
     var slideBigWidth = 0;
     var slideBigHeight = 0;
     var slideBigIndex = 0;
@@ -165,13 +252,13 @@ $(document).ready(function() {
         $('.slider-review__title').text(sliderBigTitle);
     }
 
-    // 큰 슬라이더 닫기
+    /* 큰 슬라이더 닫기 */
     // $('.slider-review--big .button-slider-close, .slider-review--big').on('click', function() { // 검은 배경만 눌러도 닫히는거 추후 고려 (그냥 주석풀면 안되고 구조 바꿔야 할 듯)
     $('.slider-review--big .button-slider-close').on('click', function() {
         reviewSliderBig.hide();
     });
 
-    // 페이지 제일 위로 가기
+    /* 페이지 제일 위로 가기 */
     $('.goto-top').on('click', function() {
         $('html, body').animate({
             scrollTop: '0'
@@ -210,6 +297,32 @@ $(document).ready(function() {
                     }
                 }
             }
+        });
+
+        // 상단 영상 부분 이후로 맨위로 가기 버튼 안보이게
+        var contentTop = $('.strength--1').offset().top - winHeight;
+        if (scrollTop > contentTop) {
+            $('.goto-top').show();
+        } else {
+            $('.goto-top').hide();
+        }
+    });
+
+    /* 모바일에서 네비게이션 메뉴 열기/닫기 */
+    $('.hamburder-button').on('click', function() {
+        $('.gnb__tel-num').addClass('visually-hidden');
+        $('.gnb').show();
+        $('.gnb-close-button').show();
+    });
+
+
+    $('.gnb-close-button').on('click', function() {
+        $('.gnb__tel-num').removeClass('visually-hidden');
+        $('.gnb').css({
+            display: ''
+        });
+        $('.gnb-close-button').css({
+            display: ''
         });
     });
 });
