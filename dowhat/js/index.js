@@ -293,7 +293,7 @@ $(document).ready(function() {
 
         aniElement.each(function () {
             aniElementClassList = $(this).attr('class');
-            offset = $(this).offset().top - winHeight - 50;
+            offset = $(this).offset().top - winHeight - 150;
             var thisEl = $(this);
             if ((aniElementClassList.indexOf('ani_') !== -1) && (scrollTop > offset) ) {
                 aniElementClassArr = aniElementClassList.split(' ');
