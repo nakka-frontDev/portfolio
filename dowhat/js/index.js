@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    function setScreenSize() {
+        var vh = window.innerHeight * 0.01;
+    
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+      
+    setScreenSize();
+
     var windowWidth = 0;
     var windowHeight = 0;
     var headerHeight = 0;
@@ -24,6 +32,8 @@ $(document).ready(function() {
 
     /* 창 크기 변화시 동영상 크기 조절 */
     $(window).resize(function() {
+        setScreenSize();
+
         windowWidth = window.innerWidth;
         windowHeight = window.innerHeight;
         headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2)));

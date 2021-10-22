@@ -80,7 +80,7 @@
 @media screen and (max-aspect-ratio: 1219/685) {
     .intro__area-movie video {
         width: auto;
-        height: 100%;
+        height: 100vh;
      }
  }
  
@@ -779,7 +779,7 @@
         display: none;
         position: fixed;
         width: 100vw;
-        height: 100%;
+        height: 100vh;
         top: 0;
         right: 0;
         bottom: 0;
