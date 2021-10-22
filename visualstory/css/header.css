@@ -3,7 +3,6 @@
 .header .inner {
     position: relative;
     max-width: 1840px;
-    /* padding: 0 40px 0; */
 }
 
 .header .logo {
@@ -29,6 +28,7 @@
     top: 0;
     right: 60px;
     width: 30px;
+    height: 50px;
     transition: .25s ease-in-out;
 }
 
@@ -92,8 +92,9 @@
 
 .header .gnb .gnb-menu .gnb-item {
     margin: 0 23px;
+    padding: 0 40px;
     flex-shrink: 0;
-    flex-basis: 160px;
+    flex-basis: 280px;
     text-align: center;
     line-height: 1.4;
 }
@@ -194,8 +195,9 @@
 
 
 @media screen and (max-width:1680px){
-    .header-menu.on .header-menu__button {
-        margin-top: 20px;
+    .header .gnb .gnb-menu .gnb-item {
+        flex-basis: 160px;
+        padding: 0;
     }
 
     .header .gnb .gnb-menu .gnb-item > a {
@@ -203,11 +205,7 @@
     }
 }
 
-@media screen and (max-width:1280px){
-    .header-menu.on .header-menu__button {
-        margin-top: 40px;
-    }
-    
+@media screen and (max-width:1280px){ 
     .header .gnb .gnb-menu .gnb-item {
         margin: 0 20px;
     }

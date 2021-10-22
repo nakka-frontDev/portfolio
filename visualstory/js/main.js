@@ -103,12 +103,8 @@ $(document).ready(function() {
         }, 6000);
     });
     
-    $(window).load(function() {
-        /* 슬라이더 높이 동적으로 */
-        var portfolioHeight = portfolioSlide.height();
-        $('.slider-portfolio__contents').css({
-            height: portfolioHeight - 1 + 'px'
-        });
+    $(window).on('load', function() {
+        sizeResponsible();
     
         /* 맨 처음 시작시 문구 움직임 */
         var offset = $(".main-portfolio-contents .inner").offset().top;
@@ -118,5 +114,17 @@ $(document).ready(function() {
             },1000);
         }, 500);
     });
+
+    $(window).on('resize', function() {
+        sizeResponsible();
+    });
+
+    function sizeResponsible() {
+        /* 슬라이더 높이 동적으로 */
+        var portfolioHeight = portfolioSlide.height();
+        $('.slider-portfolio__contents').css({
+            height: portfolioHeight - 1 + 'px'
+        });
+    }
 });
 

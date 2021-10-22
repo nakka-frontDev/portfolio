@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5, viewport-fit=cover">
+<meta name="title" content="홈페이지 제작업체 비쥬얼스토리">
+<meta name="description" content="홈페이지 제작, 홈페이지 제작 업체, 웹사이트 제작, 웹사이트 제작 업체, 홈페이지 구축, 홈페이지 구축 업체, 웹사이트 구축, 웹사이트 구축 업체, 모바일 사이트 제작, 모바일 사이트 구축, 반응형웹 제작, 반응형웹 구축, 웹에이전시, 웹에이젼시, 기업 홈페이지 제작">
+<meta name="keywords" content="홈페이지 제작, 홈페이지 제작 업체, 웹사이트 제작, 웹사이트 제작 업체, 홈페이지 구축, 홈페이지 구축 업체, 웹사이트 구축, 웹사이트 구축 업체, 모바일 사이트 제작, 모바일 사이트 구축, 반응형웹 제작, 반응형웹 구축, 웹에이전시, 웹에이젼시, 기업 홈페이지 제작">
 <title>Portfolio - 비쥬얼스토리</title>
 <link rel="stylesheet" href="./css/reset.css">
 <link rel="stylesheet" href="./css/common.css">
 <link rel="stylesheet" href="./css/header.css">
 <link rel="stylesheet" href="./css/portfolio.css">
 <link rel="stylesheet" href="./css/footer.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./js/common.js"></script>
 </head>
 <body>
@@ -25,11 +28,11 @@
                         <span class="visually-hidden">비쥬얼스토리</span>
                     </h1>
                 </div>
-                <button type="button" class="top-button" alt="화면 제일 위로 가기">
-                    <img src="./image/bt_top.png">
+                <button type="button" class="top-button" aria-label="화면 제일 위로 가기" alt="화면 제일 위로 가기">
+                    <img src="./image/bt_top.png" alt="">
                 </button>
                 <div class="header-menu">
-                    <button type="button" class="header-menu__button" alt="메인메뉴 보기/닫기">
+                    <button type="button" class="header-menu__button" aria-label="메인메뉴 보기/닫기" alt="메인메뉴 보기/닫기">
                         <span class="header-menu__hamburger"></span>
                         <span class="header-menu__hamburger"></span>
                         <span class="header-menu__hamburger"></span>
@@ -39,28 +42,28 @@
                             <h2 class="visually-hidden">메뉴</h2>
                             <ul class="gnb-menu">
                                 <li class="gnb-item">
-                                    <a href="">Home</a>
+                                    <a href="./index.html">Home</a>
                                 </li>
                                 <li class="gnb-item">
-                                    <a href="">About</a>
+                                    <a href="#">About</a>
                                     <ul class="gnb__submenu">
-                                        <li><a href="">introduce</a></li>
-                                        <li><a href="">history</a></li>
-                                        <li><a href="">client</a></li>
+                                        <li><a href="#">introduce</a></li>
+                                        <li><a href="#">history</a></li>
+                                        <li><a href="#">client</a></li>
                                     </ul>
                                 </li>
                                 <li class="gnb-item">
                                     <a href="">our Work</a>
                                     <ul class="gnb__submenu">
-                                        <li><a href="">web/mobile</a></li>
-                                        <li><a href="">branding</a></li>
+                                        <li><a href="#">web/mobile</a></li>
+                                        <li><a href="#">branding</a></li>
                                     </ul>
                                 </li>
                                 <li class="gnb-item">
                                     <a href="">Contact</a>
                                     <ul class="gnb__submenu">
-                                        <li><a href="">map</a></li>
-                                        <li><a href="">request</a></li>
+                                        <li><a href="#">map</a></li>
+                                        <li><a href="#">request</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -73,16 +76,16 @@
             <aside class="sidemenu">
                 <nav>
                     <ul class="sidemenu-list">
-                        <li class="sidemenu-item"><a href="" class="sidemenu__link">about</a></li>
-                        <li class="sidemenu-item"><a href="" class="sidemenu__link">works</a></li>
-                        <li class="sidemenu-item"><a href="" class="sidemenu__link">contact</a></li>
+                        <li class="sidemenu-item"><a href="#" class="sidemenu__link">about</a></li>
+                        <li class="sidemenu-item"><a href="./portfolio.html" class="sidemenu__link">works</a></li>
+                        <li class="sidemenu-item"><a href="#" class="sidemenu__link">contact</a></li>
                     </ul>
                 </nav>
             </aside>
             <aside class="sidemenu">
                 <nav>
                     <ul class="sidemenu-list">
-                        <li class="sidemenu-item"><a href="" class="sidemenu__link">Project request</a></li>
+                        <li class="sidemenu-item"><a href="#" class="sidemenu__link">Project request</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -94,8 +97,8 @@
                     <div class="inner">
                         <p class="main-praise">share the value of <span class="main-praise__text--linebreak">creative</span></p>
                         <ul class="sec-portfolio__tablist" role="tablist">
-                            <li id="tab1" class="sec-portfolio__tab" role="tab" aria-controls="tabpanel-1"><button type="button" class="sec-portfolio__tabbutton" alt="웹/모바일 보기">web/mobile</button></li>
-                            <li id="tab2" class="sec-portfolio__tab" role="tab" aria-controls="tabpanel-2"><button type="button" class="sec-portfolio__tabbutton" alt="브랜딩 보기">branding</button></li>
+                            <li id="tab1" class="sec-portfolio__tab" role="tab" aria-controls="tabpanel-1"><button type="button" class="sec-portfolio__tabbutton" aria-label="웹/모바일 보기" alt="웹/모바일 보기">web/mobile</button></li>
+                            <li id="tab2" class="sec-portfolio__tab" role="tab" aria-controls="tabpanel-2"><button type="button" class="sec-portfolio__tabbutton" aria-label="브랜딩 보기" alt="브랜딩 보기">branding</button></li>
                         </ul>
                         <div id="tabpanel-1" class="sec-portfolio__tabpanel" role="tabpanel" aria-labelledby="tab1">
                             <ul>
@@ -228,10 +231,10 @@
             </section>
         </footer>
         <div class="moving-background">
-            <img src="./image/bg_01.png">
+            <img src="./image/bg_01.png" alt="">
         </div>
         <div class="moving-background">
-            <img src="./image/bg_02.png">
+            <img src="./image/bg_02.png" alt="">
         </div>
     </div>
     <script src="./js/portfolio.js"></script>
