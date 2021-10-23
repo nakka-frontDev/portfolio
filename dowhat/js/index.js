@@ -65,7 +65,7 @@ $(document).ready(function() {
         reviewSlider.css({
             transform: 'translate(' + 0 + '%, 0)',
         });
-    }).resize();
+    });
 
     /* 이용후기 슬라이더 */
     var sliderBtn = $('.slider-review .button-slider-arrow');
