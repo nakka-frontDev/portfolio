@@ -8,6 +8,8 @@
     padding: 2rem 0;
     background-color: #000000;
     z-index: 100;
+    left: 0;
+    top: 0;
 
     /* 모바일에서 fixed시 종종 사라지는 버그 대응 (<- 이거 안됨. 추가 방법 대응 필요) */
     backface-visibility: hidden;

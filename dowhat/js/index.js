@@ -7,15 +7,6 @@ $(document).ready(function() {
       
     setScreenSize();
 
-    var headerHeight = $('.header').height();
-    function fixedHeaderHeight() {
-        $('.header').css({
-            height: headerHeight
-        });
-    }
-
-    fixedHeaderHeight();
-
     var windowWidth = 0;
     var windowHeight = 0;
     var headerHeight = 0;
@@ -41,7 +32,6 @@ $(document).ready(function() {
 
     /* 창 크기 변화시 동영상 크기 조절 */
     $(window).resize(function() {
-        fixedHeaderHeight();
         setScreenSize();
 
         windowWidth = window.innerWidth;
