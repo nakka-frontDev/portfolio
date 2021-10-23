@@ -7,7 +7,7 @@
     /* height: auto; */
     padding: 2rem 0;
     background-color: #000000;
-    z-index: 10;
+    z-index: 100;
 
     /* 모바일에서 fixed시 종종 사라지는 버그 대응 (<- 이거 안됨. 추가 방법 대응 필요) */
     backface-visibility: hidden;
@@ -20,6 +20,9 @@
 
     /* 모바일 fixed 버그 대응 2차 */
     border-bottom: 1px #000 solid;
+
+    /* 모바일 fixed 버그 대응 2차 */
+    
 }
 
 .header__inner {
