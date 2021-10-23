@@ -13,13 +13,11 @@
     /*모바일에서fixed시종종사라지는버그대응(<-이거안됨.추가방법대응필요)*/
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-
-    transform: translateZ(100);
-    -webkit-transform: translateZ(100);
-    -moz-transform: translateZ(100);
-    -ms-transform: translateZ(100);
-    -o-transform: translateZ(100);
-    
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
     border-bottom: 1px #000 solid;
 }
 
