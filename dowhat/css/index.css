@@ -3,24 +3,26 @@
 /* 상단 헤더 */
 .header {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    /*height: auto;
-    */
-    padding: 2rem 0;
     height: 40px;
+    padding: 2rem 0;
     background-color: #000000;
     z-index: 100;
-    left: 0;
-    top: 0;
+
     /*모바일에서fixed시종종사라지는버그대응(<-이거안됨.추가방법대응필요)*/
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
     -ms-transform: translateZ(0);
     -o-transform: translateZ(0);
+
     border-bottom: 1px #000 solid;
+    opacity: 1;
 }
 
 .header__inner {
