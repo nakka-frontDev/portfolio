@@ -5,7 +5,9 @@
     position: fixed;
     width: 100%;
     /*height: auto;
-    */padding: 2rem 0;
+    */
+    padding: 2rem 0;
+    height: 40px;
     background-color: #000000;
     z-index: 100;
     left: 0;
