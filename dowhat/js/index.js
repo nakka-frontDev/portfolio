@@ -5,7 +5,7 @@ $(document).ready(function() {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
       
-    setScreenSize();
+    // setScreenSize();
 
     var windowWidth = 0;
     var windowHeight = 0;
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     /* 창 크기 변화시 동영상 크기 조절 */
     $(window).resize(function() {
-        setScreenSize();
+        // setScreenSize();
 
         windowWidth = window.innerWidth;
         windowHeight = window.innerHeight;
