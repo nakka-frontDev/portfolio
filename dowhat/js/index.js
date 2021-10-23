@@ -36,7 +36,7 @@ $(document).ready(function() {
 
         windowWidth = window.innerWidth;
         windowHeight = window.innerHeight;
-        headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2)));
+        headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2))) + 1;
 
         var moviePaddingTop = ((windowHeight - headerHeight + 10) / windowWidth) * 100;
 
