@@ -44,9 +44,9 @@ $(document).ready(function() {
             paddingTop : headerHeight + 'px'
         });
 
-        $('.intro__area-movie').css({
-            paddingTop : moviePaddingTop + '%'
-        });
+        // $('.intro__area-movie').css({
+        //     paddingTop : moviePaddingTop + '%'
+        // });
 
         if (windowWidth <= 630) {
             nowDevice = 'MOBILE';
