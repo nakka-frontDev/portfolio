@@ -14,7 +14,7 @@ $(document).ready(function() {
     $(window).on('load', function() {
         windowWidth = window.innerWidth;
         windowHeight = window.innerHeight;
-        headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2)));
+        headerHeight = $('.header').height() + (2 * ($('.header').css('padding-top').slice(0, 2))) + 1;
 
         var moviePaddingTop = ((windowHeight - headerHeight + 10) / windowWidth) * 100;
 
@@ -44,9 +44,9 @@ $(document).ready(function() {
             paddingTop : headerHeight + 'px'
         });
 
-        // $('.intro__area-movie').css({
-        //     paddingTop : moviePaddingTop + '%'
-        // });
+        $('.intro__area-movie').css({
+            paddingTop : moviePaddingTop + '%'
+        });
 
         if (windowWidth <= 630) {
             nowDevice = 'MOBILE';
