@@ -562,6 +562,22 @@
     background-attachment: fixed;
 }
 
+.fixed-background::before {
+  content: ' ';
+  display: block;
+  background-image: url("../image/bg_fixed.png");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: -10;
+}
+
 .contact-us {
     padding: 10rem 0;
     text-align: center;
