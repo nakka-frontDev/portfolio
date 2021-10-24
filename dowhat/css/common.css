@@ -50,6 +50,10 @@ button {
 }
 
 /* 레이아웃 정의 */
+.wrap {
+    background-color: #fff;
+}
+
 .inner {
     position: relative;
     width: 114rem;
@@ -111,9 +115,10 @@ button {
 
 .media__content {
     display: flex;
+    position: relative;
     justify-content: space-around;
     align-items: center;
-    position: relative;
+    overflow: hidden;
 }
 
 .media__img-box {

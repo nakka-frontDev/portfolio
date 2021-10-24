@@ -10,6 +10,8 @@ $(document).ready(function() {
     var windowWidth = 0;
     var windowHeight = 0;
     var headerHeight = 0;
+    var fixBgTop = 0;
+    var fixBgHeight = 0;
 
     $(window).on('load', function() {
         windowWidth = window.innerWidth;
@@ -26,9 +28,16 @@ $(document).ready(function() {
             paddingTop : moviePaddingTop + '%'
         });
 
-        var fixBgTop = $('.header').height() + $('.intro').height() + $('#introduce').height();
+        // .fixed-background의 높이는 위 아래 offset이 조정된 fixed 요소라 높이가 너무 커져서 부모요소의 높이 사용
+        fixBgHeight = $('.fixed-background-wrapper').height();  
+
+        $('.contact-us').css({
+            marginTop: fixBgHeight + 'px'
+        });
+
+        fixBgTop = $('.header').height() + $('.intro').height() + $('#introduce').height();
         $('.fixed-background-wrapper').css({
-            top: fixBgTop
+            top: fixBgTop + 'px'
         });
     });
 
