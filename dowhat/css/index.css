@@ -574,6 +574,8 @@
     background-image: url("../image/bg_fixed.png");
     background-size: cover;
     background-position: center center;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
 .contact-us {
