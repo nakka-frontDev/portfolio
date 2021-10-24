@@ -25,6 +25,11 @@ $(document).ready(function() {
         $('.intro__area-movie').css({
             paddingTop : moviePaddingTop + '%'
         });
+
+        var fixBgTop = $('.header').height() + $('.intro').height() + $('#introduce').height();
+        $('.fixed-background-wrapper').css({
+            top: fixBgTop
+        });
     });
 
     var nowDevice = 'PC';
