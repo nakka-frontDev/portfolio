@@ -26,6 +26,7 @@
 }
 
 .header__box {
+    position: relative;
     padding: 2rem 0;
     background-color: #000;
     border-bottom: 1px #000 solid;
