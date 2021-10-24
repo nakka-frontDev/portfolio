@@ -91,6 +91,7 @@
 }
 
 .intro__backgound {
+    display: none;
     position: absolute;
     left: 0;
     top: 0;
