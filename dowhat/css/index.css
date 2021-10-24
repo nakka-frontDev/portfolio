@@ -553,30 +553,27 @@
 
 
 /* 고정 배경 */
-.fixed-background {
-    /* height: 54.5rem;
-    background-image: url("../image/bg_fixed.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed; */
-}
 
-.fixed-background::before {
-  content: ' ';
-  display: block;
-  background-image: url("../image/bg_fixed.png");
-  background-position: center;
-  background-size: cover;
+
+.fixed-background-wrapper {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 54.5rem;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: -10;
-}
+  }
+  
+  .fixed-background {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 54.5rem;
+    background-size: cover;
+    background-position: center center;
+  }
 
 .contact-us {
     padding: 10rem 0;
@@ -726,6 +723,10 @@
     
     .partner__item {
         flex: 0 0 28rem;
+    }
+
+    .fixed-background-wrapper {
+        height: 45.5rem;
     }
 
     .fixed-background {
@@ -914,8 +915,12 @@
         width: 70%;
     }
 
+    .fixed-background-wrapper {
+        height: 40rem;
+    }
+
     .fixed-background {
-        font-size: 40rem;
+        height: 40rem;
     }
 
     .footer {
