@@ -1,12 +1,4 @@
 $(document).ready(function() {
-    function setScreenSize() {
-        var vh = window.innerHeight * 0.01;
-    
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-      
-    // setScreenSize();
-
     var windowWidth = 0;
     var windowHeight = 0;
     var headerHeight = 0;
@@ -14,6 +6,7 @@ $(document).ready(function() {
     var fixBgHeight = 0;
 
     $(window).on('load', function() {
+        // 창 크기 변화시 동영상 크기 조절
         windowWidth = window.innerWidth;
         windowHeight = window.innerHeight;
         headerHeight = $('.header__box').height() + (2 * ($('.header__box').css('padding-top').slice(0, 2))) + 1;
@@ -44,10 +37,8 @@ $(document).ready(function() {
     var nowDevice = 'PC';
     var reviewSlider = $('.slider-review .slider-review__list');
 
-    /* 창 크기 변화시 동영상 크기 조절 */
     $(window).resize(function() {
-        // setScreenSize();
-
+        // 창 크기 변화시 동영상 크기 조절
         windowWidth = window.innerWidth;
         windowHeight = window.innerHeight;
         headerHeight = $('.header__box').height() + (2 * ($('.header__box').css('padding-top').slice(0, 2))) + 1;
@@ -62,6 +53,19 @@ $(document).ready(function() {
             paddingTop : moviePaddingTop + '%'
         });
 
+        // .fixed-background의 높이는 위 아래 offset이 조정된 fixed 요소라 높이가 너무 커져서 부모요소의 높이 사용
+        fixBgHeight = $('.fixed-background-wrapper').height();  
+
+        $('.contact-us').css({
+            marginTop: fixBgHeight + 'px'
+        });
+
+        fixBgTop = $('.header').height() + $('.intro').height() + $('#introduce').height();
+        $('.fixed-background-wrapper').css({
+            top: fixBgTop + 'px'
+        });
+
+        // viewport의 가로 길이에 따라 슬라이더 조절
         if (windowWidth <= 630) {
             nowDevice = 'MOBILE';
             reSizeSlider('MOBILE');
@@ -79,7 +83,7 @@ $(document).ready(function() {
         reviewSlider.css({
             transform: 'translate(' + 0 + '%, 0)',
         });
-    });
+    }).resize();
 
     /* 이용후기 슬라이더 */
     var sliderBtn = $('.slider-review .button-slider-arrow');
@@ -339,14 +343,14 @@ $(document).ready(function() {
         }
     });
 
-    /* 모바일에서 네비게이션 메뉴 열기/닫기 */
+    /* 모바일에서 네비게이션 메뉴 열기 */
     $('.hamburder-button').on('click', function() {
         $('.gnb__tel-num').addClass('visually-hidden');
         $('.gnb').show();
         $('.gnb-close-button').show();
     });
 
-
+    /* 모바일에서 네비게이션 메뉴 닫기 */
     $('.gnb-close-button').on('click', function() {
         $('.gnb__tel-num').removeClass('visually-hidden');
         $('.gnb').css({
