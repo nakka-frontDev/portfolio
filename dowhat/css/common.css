@@ -31,7 +31,7 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans KR', 'Noto Sans','Open sans','Nanum Gothic', 'Tahoma', 'Verdana', 'Arial', 'Trebuchet MS',sans-serif;
+    font-family: 'Noto Sans KR', 'Noto Sans','Open sans','Nanum Gothic', 'Tahoma', 'Verdana', 'Arial', 'Trebuchet MS', sans-serif;
     line-height: 1.8;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: auto!important;
@@ -47,6 +47,12 @@ button {
     border: none;
     box-sizing: unset;
     cursor: pointer;
+}
+
+/* iOS에서 전화번호 형식 자동으로 링크로 만들때 스타일은 바뀌지 않게 */
+a[href^="x-apple-data-detectors:"] {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /* 레이아웃 정의 */
@@ -89,7 +95,7 @@ button {
     border-radius: 3px;
     border: 1px #737371 solid;
     color: #d4d4d4;
-    font-family: 'Playfair Display', 'Nanum Gothic';
+    font-family: 'Playfair Display', 'Nanum Gothic', sans-serif;
 }
 
 .section-row {
@@ -149,7 +155,7 @@ button {
 
 .media__title {
     font-size: 5.4rem;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
 
@@ -157,14 +163,14 @@ button {
     margin: 15px auto 20px;
     font-size: 2.4rem;
     color: #6a6a6a;
-    font-family: 'Questrial';
+    font-family: 'Questrial', sans-serif;
     line-height: 2.8;
 }
 
 .media__desc {
     color: #919191;
     font-size: 1.8rem;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
 /* 애니메이션 요소 */
