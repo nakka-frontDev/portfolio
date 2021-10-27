@@ -69,7 +69,7 @@ a[href^="x-apple-data-detectors:"] {
 /* 공통 사용 요소 */
 .skip-navi {
     position: relative;
-    z-index: 100;
+    z-index: 200;
 }
 
 .skip-navi a {
@@ -86,7 +86,7 @@ a[href^="x-apple-data-detectors:"] {
 .skip-navi a:focus {
     top: 0;
     text-decoration: none;
-    z-index: 11;
+    z-index: 50;
 }
 
 .button--ghost {

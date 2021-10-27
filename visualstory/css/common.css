@@ -103,9 +103,33 @@ body {
     z-index: 10;
 }
 
+/* 공통 사용요소 */
 .inner {
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.skip-navi {
+    position: relative;
+    z-index: 200;
+}
+
+.skip-navi a {
+    position: absolute;
+    top: -10rem;
+    left: 0;
+    width:12rem;
+    padding: 5px 0;
+    font-size: 1.3rem;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.skip-navi a:focus {
+    top: 0;
+    text-decoration: none;
+    z-index: 50;
 }
 
 /* 애니메이션 정의 */
