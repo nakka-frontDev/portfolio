@@ -316,7 +316,10 @@ $(document).ready(function() {
             if (window.innerWidth > 768) {
                 offset = $(this).offset().top - winHeight;
             } else if (window.innerWidth <= 768) {
-                offset = $(this).offset().top - winHeight - 200; // 모바일 스크롤 대응을 위한 임시 하드코딩 수정 (추후 개선 필요)\
+                offset = $(this).offset().top - (winHeight * 1.5); // 모바일 스크롤 대응을 위한 임시 하드코딩 수정 (추후 개선 필요)
+                if (!offset) {
+                    offset = 0;
+                }
             }
             
             var thisEl = $(this);
