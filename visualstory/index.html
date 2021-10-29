@@ -17,6 +17,21 @@
 <script src="./js/common.js"></script>
 </head>
 <body>
+    <div class="modal" role="dialog" aria-labelledby="modal__title" aria-modal="true">
+        <div class="modal__background"></div>
+        <div class="modal__content">
+            <div class="modal__inner">
+                <strong id="modal__title" class="modal__title">알립니다</strong>
+                <p>
+                    본 페이지는 개인이 포트폴리오 목적으로 제작하였으며 상업적 목적을 가지지 않습니다.<br>
+                    페이지의 내용과 이미지에 대한 저작권은 원래 페이지의 소유자에게 있습니다.
+                </p>
+                <p class="modal__caution">이 창을 닫으면 24시간동안 다시 보이지 않습니다.</p>
+                <p>(하단 '닫기' 버튼 혹은 화면 어두운 배경을 누르면 창이 닫힙니다)</p>
+            </div>
+            <button type="button" aria-label="알림창 닫기" class="modal-close-button">닫기</button>
+        </div>
+    </div>
     <div class="skip-navi">
         <a href="#sec-main-portfolio">주요 포트폴리오</a>
         <a href="#portfolio-view">포트폴리오 안내</a>

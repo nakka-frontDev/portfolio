@@ -1,10 +1,34 @@
 $(document).ready(function() {
+    /* 알림 모달창 */
+    var cookieData = document.cookie;
+
+    // 처음 모달창 뜰때 스크롤 막기
+    if(cookieData.indexOf('dwmodal=Y') < 0) {
+        $('.modal').show();
+        $('html, body').addClass('not-scroll');
+    } else {
+        $('.modal').hide();
+    }
+
+    $('.modal-close-button, .modal__background').on('click', function() {
+        $('html, body').removeClass('not-scroll');
+        $('.modal').hide();
+        setCookie('dwmodal', 'Y', 1);
+    });
+
+    function setCookie(name, value, expiredays) {
+        var todayDate = new Date();
+        todayDate.setDate( todayDate.getDate() + expiredays );
+        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+    }
+    
     var windowWidth = 0;
     var windowHeight = 0;
     var headerHeight = 0;
     var fixBgTop = 0;
     var fixBgHeight = 0;
 
+    /* 리소스 로드 완료된 후 실행 */
     $(window).on('load', function() {
         // 창 크기 변화시 동영상 크기 조절
         windowWidth = window.innerWidth;
@@ -32,6 +56,13 @@ $(document).ready(function() {
         $('.fixed-background-wrapper').css({
             top: fixBgTop + 'px'
         });
+
+        // 로딩시 맨 위로 올리기
+        if (scrollTop !== 0) {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 1000);
+        }
     });
 
     var nowDevice = 'PC';
@@ -281,7 +312,6 @@ $(document).ready(function() {
     }
 
     /* 큰 슬라이더 닫기 */
-    // $('.slider-review--big .button-slider-close, .slider-review--big').on('click', function() { // 검은 배경만 눌러도 닫히는거 추후 고려 (그냥 주석풀면 안되고 구조 바꿔야 할 듯)
     $('.slider-review--big .button-slider-close').on('click', function() {
         reviewSliderBig.hide();
     });
@@ -316,7 +346,7 @@ $(document).ready(function() {
             if (window.innerWidth > 768) {
                 offset = $(this).offset().top - winHeight;
             } else if (window.innerWidth <= 768) {
-                offset = $(this).offset().top - (winHeight * 1.5); // 모바일 스크롤 대응을 위한 임시 하드코딩 수정 (추후 개선 필요)
+                offset = $(this).offset().top - (winHeight * 1.3); // 모바일 스크롤 대응을 위한 임시 하드코딩 수정 (추후 개선 필요)
                 if (!offset) {
                     offset = 0;
                 }
