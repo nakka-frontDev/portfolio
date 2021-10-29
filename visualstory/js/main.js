@@ -5,33 +5,34 @@ $(document).ready(function() {
     // 같은 이름에 동작이 다른 것이 혼동을 줄 수 있고 다른 사람이 작업하기도 어려워 좋지 않다고 생각했음.
     // 그래서 요소마다 클래스가 적용되는 상황이 다를 것이라고 보고 통일된 형태로 하지 않았음
     // 그리고 요소가 필요한 애니메이션이 있으면 css에서 정의하고 js에서 해당 애니메이션이 동작하도록 정의했음
-    var $elems = $(".main-portfolio__item");
-    var winheight = $(window).height();
+    var aniElements = $(".main-portfolio__item");
+    var winHeight = $(window).height();
     var mainPraiseFlag = false;
+    var scrollTop = 0;
 
-    function animate_elems() {
-        wintop = $(window).scrollTop();
-        var offset = $(".main-portfolio-contents .inner").offset().top - (winheight * 0.5);
+    function animateElements() {
+        scrollTop = $(window).scrollTop();
+        var offset = $(".main-portfolio-contents .inner").offset().top - (winHeight * 0.5);
 
-        if (!mainPraiseFlag && wintop >= offset) {
+        // 매인 문구는 한번만 실행
+        if (!mainPraiseFlag && scrollTop >= offset) {
             $('.main-praise--big').addClass('main-praise--big-moving');
             $('.main-praise--big').removeClass('main-praise--big-center');
             mainPraiseFlag = true;
         }
 
-        $elems.each(function () {
-            $elm = $(this);
-            topcoords = $elm.offset().top; // 각 요소가 원래 자리해야 하는 위치 (좌표)
+        aniElements.each(function () {
+            topPos = $(this).offset().top; // 각 요소가 원래 자리해야 하는 위치 (좌표)
 
             // 각 요소의 위치가 창의 절반을 막 지날 때
-            if (wintop >= (topcoords - (winheight * 0.5))) { // 현재 스크롤 탑이 각 요소의 기존 좌표에서 현재 창의 절반만큼 이전(앞)인 위치를 지날때
-                $elm.addClass('ani-fade-in');
+            if (scrollTop >= (topPos - (winHeight * 0.5))) { // 현재 스크롤 탑이 각 요소의 기존 좌표에서 현재 창의 절반만큼 이전(앞)인 위치를 지날때
+                $(this).addClass('ani-fade-in');
             } 
         });
     }
 
     $(window).scroll(function() {
-        animate_elems();
+        animateElements();
     });
 
 
