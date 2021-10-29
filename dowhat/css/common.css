@@ -67,6 +67,69 @@ a[href^="x-apple-data-detectors:"] {
 }
 
 /* 공통 사용 요소 */
+.modal {
+    position: relative;
+    z-index: 210;
+}
+
+.modal__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 70%);
+}
+
+.modal__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0px 0px 11px 3px #818181;
+    border-radius: 1rem;
+}
+
+.modal__inner {
+    padding: 2.3rem;
+}
+
+.modal__title {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.modal p {
+    font-size: 1.6rem;
+}
+
+.modal__caution {
+    color: #fb3232;
+}
+
+.modal-close-button {
+    position: absolute;
+    right: 0.4rem;
+    bottom: -4rem;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 1.6rem;
+    background: #838282;
+}
+
+@media screen and (max-width: 768px) {
+    .modal__content {
+        width: 100%;
+        max-width: 80%;
+    }
+}
+
 .skip-navi {
     position: relative;
     z-index: 200;
@@ -249,4 +312,8 @@ a[href^="x-apple-data-detectors:"] {
 .line-break:before {
     content: '\a';
     white-space: pre;
+}
+
+.not-scroll {
+    overflow: hidden;
 }

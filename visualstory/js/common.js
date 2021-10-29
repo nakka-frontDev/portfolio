@@ -1,4 +1,36 @@
 $(document).ready(function() {
+    /* 알림 모달창 */
+    var cookieData = document.cookie;
+
+    // 처음 모달창 뜰때 스크롤 막기
+    if(cookieData.indexOf('vsmodal=Y') < 0) {
+        $('.modal').show();
+        $('html, body').addClass('not-scroll');
+    } else {
+        $('.modal').hide();
+    }
+
+    $('.modal-close-button, .modal__background').on('click', function() {
+        $('html, body').removeClass('not-scroll');
+        $('.modal').hide();
+        setCookie('vsmodal', 'Y', 1);
+    });
+
+    function setCookie(name, value, expiredays) {
+        var todayDate = new Date();
+        todayDate.setDate( todayDate.getDate() + expiredays );
+        document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+    }
+
+    $(window).on('load', function() {
+        // 로딩시 맨 위로 올리기
+        if (current_pos !== 0) {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 1000);
+        }
+    })
+
     /* 메인 메뉴 버튼 눌렀을 때 */
     $('.header-menu__button').on('click', function() {
         $('.header .gnb .gnb-item').addClass('on'); // 참고 사이트에서 메뉴 띄워지면 처음에는 무조관 효과 활성화되게 되어있어서 동일하게 함
