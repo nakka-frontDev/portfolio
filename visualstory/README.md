@@ -1,10 +1,10 @@
 # visualstory
----
+
 ## 개요
 - 포트폴리오 목적으로 만든 페이지입니다.
 - 구성은 index와 portfolio 페이지로 총 2페이지 입니다.
-  - index 페이지 : 
-  - portfolio 페이지 : 
+  - index 페이지 : https://nakka-frontdev.github.io/portfolio/visualstory/
+  - portfolio 페이지 : https://nakka-frontdev.github.io/portfolio/visualstory/portfolio
 - portfolio 페이지는 <u>반복되는 부분은 기술적으로 큰 차이가 없다고 판단</u>해서 구현 그 자체에 중점을 두었습니다.
 - ```HTML5```, ```CSS3```, ```jQuery```를 사용하였습니다.
 - 스크립트 동작은 **다른 플러그인을 사용하지 않고 직접 구현**하였습니다.
@@ -40,7 +40,7 @@
                 - Score : 70.7 → **100**
             - 포트폴리오 페이지
                 - Score : 70.1 → **100**
-<br>
+- hover시 동작 등 소소한 부분들을 수정하였습니다.
 - **스크립트를 개선**시켰습니다.
     - 애니메이션 설정 방식 개선
         - 기존 소스는 스크롤되면 '특정 클래스를 일괄적으로' 추가(```jQuery```의 ```addClass()``` 이용)하는 방식이었습니다.
@@ -87,5 +87,3 @@
         animateElements();
     });
 ```
-
-- hover시 동작 등 소소한 부분들을 수정하였습니다.
