@@ -5,7 +5,7 @@ $(document).ready(function() {
     // 같은 이름에 동작이 다른 것이 혼동을 줄 수 있고 다른 사람이 작업하기도 어려워 좋지 않다고 생각했음.
     // 그래서 요소마다 클래스가 적용되는 상황이 다를 것이라고 보고 통일된 형태로 하지 않았음
     // 그리고 요소가 필요한 애니메이션이 있으면 css에서 정의하고 js에서 해당 애니메이션이 동작하도록 정의했음
-    var aniElements = $(".main-portfolio__item");
+    var aniElements = $('.main-portfolio__item');
     var winHeight = $(window).height();
     var mainPraiseFlag = false;
     var scrollTop = 0;
